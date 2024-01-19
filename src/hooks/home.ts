@@ -1,4 +1,4 @@
-import { setNameNa } from '../redux/home/homeActions'
+import { setNameNa, getAllTimeZone } from '../redux/home/homeActions'
 import { useAppDispatch, useAppSelector } from './redux-hooks'
 
 export const useHome = () => {
@@ -6,8 +6,15 @@ export const useHome = () => {
   const selector = useAppSelector
 
   const name = selector((state) => state.homes.name)
+  const listTimeZone = selector((state) => state.homes.listTimeZone)
+
   const handleSetName = () => {
     dispatch(setNameNa())
   }
-  return { name, handleSetName }
+
+  const handleGetAllTimeZone = () => {
+    dispatch(getAllTimeZone())
+  }
+
+  return { name, listTimeZone, handleSetName, handleGetAllTimeZone }
 }

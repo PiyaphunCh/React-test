@@ -9,9 +9,7 @@ const Layout = (props: any) => {
         <TopBar />
       </div>
       <div className="h-[80%] max-h-[80%]  w-screen relative">{children}</div>
-      <div className="h-[10%] max-h-[10%] relative">
-        <BottomBar />
-      </div>
+      <div className="h-[10%] max-h-[10%] relative"></div>
     </div>
   )
 }
